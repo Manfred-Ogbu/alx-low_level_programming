@@ -1,7 +1,10 @@
 #include <stdio.h>
 /**
- * main - entry into program
- * return - set to a positive integer or zero
+ * main - Entry point
+ *
+ * Description: This program illustrates the use of puts
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
