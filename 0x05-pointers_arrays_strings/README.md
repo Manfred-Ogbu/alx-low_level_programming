@@ -1,1 +1,1 @@
-Write a function that prints a string, in reverse, followed by a new line.
+0x05. C - Pointers, arrays and strings
