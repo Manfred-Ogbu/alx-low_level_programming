@@ -6,14 +6,30 @@ void iterate_wild(char **wildstr);
 int *postfix_match(char *str, char *postfix);
 
 /**
- * strlen_no_wilds - Returens the length of string
- * also ignoring wildcard xters
- * @str: The string to act on
- *
- * Return: The length
+ * wildcmp - compare strings
+ * @s1: pointer
+ * @s2: pointer
+ * Return: 0
  */
-int strlen_no_wilds(char *str)
+int wildcmp(char *s1, char *s2)
 {
-	int len = 0;
-	int index = 0;
+	if (*s1 == '\0')
+	{
+		if (*s2 != '\0' && *s2 == '*')
+		{
+			return (wildcmp(s1, s2 + 1));
+		}
+		return (*s2 == '\0');
+	}
+
+	if (*s2 == '*')
+	{
+		return (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1));
+	}
+	else if (*s1 == *s2)
+	{
+		return (wildcmp(s1 + 1, s2 = 1));
+	}
+	return (0);
 }
+
